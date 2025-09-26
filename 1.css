@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #d6ecff, #f0f8ff);
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+}
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background-color: #ffffffcc;
+  padding: 40px;
+  border-radius: 25px;
+  border: 3px dashed #99ccff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  position: relative;
+}
+
+.card h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  color: #3b5ea1;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.open-btn {
+  display: inline-block;
+  background-color: #5aa9ff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1em;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: bounce 2s infinite;
+  transition: transform 0.2s;
+}
+
+.open-btn:hover {
+  background-color: #1c78d5;
+  transform: scale(1.1);
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Floating emoji */
+.emoji-float {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: floatEmoji 10s linear infinite;
+  opacity: 0.7;
+}
+
+.emoji-float.delay1 { top: 60%; left: -10%; animation-delay: 2s; }
+.emoji-float.delay2 { top: 80%; left: -15%; animation-delay: 4s; }
+.emoji-float.delay3 { top: 50%; left: -20%; animation-delay: 6s; }
+
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-120vh) translateX(100vw);
+  }
+}
+
+/* Scrapbook stickers */
+.stickers {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sticker {
+  font-size: 1.8rem;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transform: rotate(-15deg);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+  .card h1 {
+    font-size: 2em;
+  }
+}
